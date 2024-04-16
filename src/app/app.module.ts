@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlogFormComponent } from './components/blog-form/blog-form.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -13,12 +12,19 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { CuriotoryBlogFormComponent } from './components/curiotory-blog-form/curiotory-blog-form.component';
+import { RecrutoryBlogFormComponent } from './components/recrutory-blog-form/recrutory-blog-form.component';
+import { CuriotoryDashboardComponent } from './components/curiotory-dashboard/curiotory-dashboard.component';
+import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/recrutory-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogFormComponent,
     LoginComponent,
+    CuriotoryBlogFormComponent,
+    RecrutoryBlogFormComponent,
+    CuriotoryDashboardComponent,
+    RecrutoryDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),
