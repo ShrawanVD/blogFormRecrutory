@@ -1,71 +1,43 @@
-<div class="container-box" style="
-background-image: url('assets/6.jpg');
-min-height: 100vh;
-background-size:cover;
-background-position: center;" >
+<div class="container-box" style="background-color: white; padding-bottom: 2rem;">
 
-  
-  <div class="card">
+
+  <div class="card" style="background-color: rgb(236, 236, 236);">
 
     <h1>Fill the details</h1>
 
+<form [formGroup]="blogForm">
     <!-- title -->
     <mat-form-field appearance="outline">
-      <mat-label>Title</mat-label>
-      <input
-        matInput
-        placeholder="Foreign languages and globalisation.."
-        value=""
-        required
-        formControlName="companyName"
-      />
+      <mat-label>Blog Title</mat-label>
+      <input matInput placeholder="Foreign languages and globalisation.." required
+        formControlName="title" />
     </mat-form-field>
 
     <!-- paragraph 1 -->
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label appearance="outline">Paragraph 1</mat-label>
-      <textarea
-        required
-        rows="2"
-        matInput
-        placeholder="Content goes here...."
-        formControlName="para1"
-      ></textarea>
+      <textarea required rows="2" matInput placeholder="Content goes here...." formControlName="content"></textarea>
     </mat-form-field>
 
     <!-- paragraph 2 -->
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label appearance="outline">Paragraph 2</mat-label>
-      <textarea
-        required
-        rows="2"
-        matInput
-        placeholder="Content goes here..."
-        formControlName="para2"
-      ></textarea>
+      <textarea required rows="2" matInput placeholder="Content goes here..." formControlName="content2"></textarea>
     </mat-form-field>
 
     <!-- Image url 1 -->
     <mat-form-field appearance="outline">
-      <mat-label>Image Url</mat-label>
-      <input
-        matInput
-        placeholder="https://image.com"
-        value=""
-        required
-        formControlName="url1"
-      />
+      <mat-label>First Image Url</mat-label>
+      <input matInput placeholder="https://image.com" required formControlName="imageUrl" />
     </mat-form-field>
 
     <!-- Image Url 2 -->
     <mat-form-field appearance="outline" style="margin-bottom: 2rem;">
-      <mat-label>Image Url</mat-label>
-      <input
-        matInput
-        placeholder="https://image.com"
-        value=""
-        formControlName="url2"
-      />
+      <mat-label>Second Image Url</mat-label>
+      <input matInput placeholder="https://image.com" formControlName="imageUrl2" />
     </mat-form-field>
 
-</div>
+    
+</form>
+<button mat-raised-button (click)="submitBlogs()" class="submitbtn"> Submit</button>
+  </div>
