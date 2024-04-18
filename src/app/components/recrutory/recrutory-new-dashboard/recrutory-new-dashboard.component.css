@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo{
+    height: 3rem;
+    margin-right: 2rem;
+    width: auto;
+  }
+
+  .dashboard{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a{
+    margin: 0 1rem;
+  }

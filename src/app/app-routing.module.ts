@@ -5,6 +5,8 @@ import { authguardGuard } from './auth/authguard.guard';
 import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
 import { CompanyComponent } from './components/recrutory/company/company.component';
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
+import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
+import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: 'recrutory/company',
     component: CompanyComponent
+  },
+  {
+    path: 'recrutory/candidate',
+    component: CandidateComponent
+  },
+  {
+    path: 'recrutory',
+    component: RecrutoryNewDashboardComponent
   }
 ];
 
