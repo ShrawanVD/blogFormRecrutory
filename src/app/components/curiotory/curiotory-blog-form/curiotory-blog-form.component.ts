@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BlogsService } from '../../services/blogs.service';
+import { BlogsService } from '../../../services/blogs.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CuriotoryBlogService } from '../../services/curiotory-blog.service';
+import { CuriotoryBlogService } from '../../../services/curiotory-blog.service';
 
 @Component({
   selector: 'app-curiotory-blog-form',

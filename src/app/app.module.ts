@@ -12,10 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import { CuriotoryBlogFormComponent } from './components/curiotory-blog-form/curiotory-blog-form.component';
-import { RecrutoryBlogFormComponent } from './components/recrutory-blog-form/recrutory-blog-form.component';
-import { CuriotoryDashboardComponent } from './components/curiotory-dashboard/curiotory-dashboard.component';
-import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/recrutory-dashboard.component';
+import { CuriotoryBlogFormComponent } from './components/curiotory/curiotory-blog-form/curiotory-blog-form.component';
+import { RecrutoryBlogFormComponent } from './components/recrutory/recrutory-blog-form/recrutory-blog-form.component';
+import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
+import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { CompanyComponent } from './components/recrutory/company/company.component';
+import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
+import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     RecrutoryBlogFormComponent,
     CuriotoryDashboardComponent,
     RecrutoryDashboardComponent,
+    CompanyComponent,
+    CandidateComponent,
+    TeacherComponent,
   ],
   imports: [
     BrowserModule,

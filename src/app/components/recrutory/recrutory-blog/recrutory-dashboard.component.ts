@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { BlogsService } from '../../services/blogs.service';
+import { BlogsService } from '../../../services/blogs.service';
 import { RecrutoryBlogFormComponent } from '../recrutory-blog-form/recrutory-blog-form.component';
 
 @Component({

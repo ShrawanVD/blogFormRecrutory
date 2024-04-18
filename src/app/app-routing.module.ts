@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { authguardGuard } from './auth/authguard.guard';
-import { CuriotoryDashboardComponent } from './components/curiotory-dashboard/curiotory-dashboard.component';
-import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/recrutory-dashboard.component';
+import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
+import { CompanyComponent } from './components/recrutory/company/company.component';
+import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,12 @@ const routes: Routes = [
     component: CuriotoryDashboardComponent
   },
   {
-    path: 'recrutory',
+    path: 'recrutory/blogs',
     component: RecrutoryDashboardComponent
+  },
+  {
+    path: 'recrutory/company',
+    component: CompanyComponent
   }
 ];
 

@@ -4,7 +4,7 @@ import { CuriotoryBlogFormComponent } from '../curiotory-blog-form/curiotory-blo
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CuriotoryBlogService } from '../../services/curiotory-blog.service';
+import { CuriotoryBlogService } from '../../../services/curiotory-blog.service';
 
 @Component({
   selector: 'app-curiotory-dashboard',
