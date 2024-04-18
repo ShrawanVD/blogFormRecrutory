@@ -26,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CompanyComponent } from './components/recrutory/company/company.component';
 import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
 import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
+import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TeacherComponent } from './components/curiotory/teacher/teacher.compone
     CompanyComponent,
     CandidateComponent,
     TeacherComponent,
+    CuriotoryNewDashboardComponent,
   ],
   imports: [
     BrowserModule,

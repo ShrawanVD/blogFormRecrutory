@@ -13,7 +13,6 @@ import { RecrutoryBlogFormComponent } from '../recrutory-blog-form/recrutory-blo
 })
 export class RecrutoryDashboardComponent {
 
-  
   displayedColumns: string[] = [
     'srno',
     'date',
@@ -26,6 +25,7 @@ export class RecrutoryDashboardComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  pageSize = 10;
 
   constructor(private _dialog: MatDialog, private recrutoryBlog: BlogsService) { }
 

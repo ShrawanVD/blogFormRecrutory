@@ -5,6 +5,8 @@ import { authguardGuard } from './auth/authguard.guard';
 import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
 import { CompanyComponent } from './components/recrutory/company/company.component';
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
+import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
+import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
 
 const routes: Routes = [
   {
@@ -12,7 +14,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'curiotory',
+    path: 'curiotory/blogs',
     canActivate: [authguardGuard],
     component: CuriotoryDashboardComponent
   },
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: 'recrutory/company',
     component: CompanyComponent
+  },
+  {
+    path: 'curiotory',
+    component: CuriotoryNewDashboardComponent
+  },
+  {
+    path: 'curiotory/teacher',
+    component: TeacherComponent
   }
 ];
 
