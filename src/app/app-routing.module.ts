@@ -7,6 +7,8 @@ import { CompanyComponent } from './components/recrutory/company/company.compone
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
 import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
 import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
+import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
+import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,14 @@ const routes: Routes = [
   {
     path: 'curiotory/teacher',
     component: TeacherComponent
+  },
+  {
+    path: 'recrutory/candidate',
+    component: CandidateComponent
+  },
+  {
+    path: 'recrutory',
+    component: RecrutoryNewDashboardComponent
   }
 ];
 

@@ -27,6 +27,7 @@ import { CompanyComponent } from './components/recrutory/company/company.compone
 import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
 import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
 import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
+import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory
     CandidateComponent,
     TeacherComponent,
     CuriotoryNewDashboardComponent,
+    RecrutoryNewDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [
     provideClientHydration(),

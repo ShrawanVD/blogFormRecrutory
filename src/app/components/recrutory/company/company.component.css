@@ -1,0 +1,55 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* used to provide the horizontal scroller functionality */
+  .table-container{
+      min-width: 10rem;
+      height: 34.5rem;
+      overflow: auto;
+  }
+
+  td{
+    min-width: 200px;
+  }
+
+  
+  
+  .example-spacer {
+      flex: 1 1 auto;
+    }
+    
+    .main-body {
+      padding-top: 20px;
+      margin: 0 auto;
+      max-width: 1348px;
+      mat-form-field {
+        width: 100%;
+      }
+    }
+    
+    .action {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .logo{
+      height: 2.5rem;
+      margin-right: 2rem;
+      width: auto;
+    }
+  
+    .limited-lines {
+      max-height: auto; /* Adjust this value as needed to fit two lines */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 9; /* Number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+
+    .mat-paginator{
+      min-width: auto;
+    }
