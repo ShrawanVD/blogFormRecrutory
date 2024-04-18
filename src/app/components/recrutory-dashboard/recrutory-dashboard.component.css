@@ -16,3 +16,16 @@
     gap: 5px;
   }
   
+  .logo{
+    height: 2.5rem;
+    width: auto;
+  }
+
+  .limited-lines {
+    max-height: auto; /* Adjust this value as needed to fit two lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 9; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }

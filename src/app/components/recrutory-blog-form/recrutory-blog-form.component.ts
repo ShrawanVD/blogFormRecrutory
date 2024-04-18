@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BlogsService } from '../../services/blogs.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -13,9 +14,7 @@ export class RecrutoryBlogFormComponent implements OnInit{
 
   blogForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder,private blog:BlogsService,private _snackBar: MatSnackBar){}
-
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder,private recrutoryBlog:BlogsService,private _snackBar: MatSnackBar,private _fb: FormBuilder, private _dialogRef: MatDialogRef<RecrutoryBlogFormComponent>, @Inject(MAT_DIALOG_DATA) public data: any){
     this.blogForm = this._formBuilder.group({
       title: [''],
       content: [''],
@@ -25,26 +24,70 @@ export class RecrutoryBlogFormComponent implements OnInit{
     });
   }
 
+  ngOnInit(): void {
+    this.blogForm.patchValue(this.data);
+  }
+
   submitBlogs(){
-    if(this.blogForm.value.content){
-      this.blog.postBlogs(this.blogForm.value).subscribe({
-        next: (val: any) => {
-          this._snackBar.open('Form Submitted Successfully', 'Close', {
-            duration: 3000,
-          });
-          window.location.reload();
-        },
-        error: (err: any) => {
-          this._snackBar.open('Form Submitted Successfully', 'Close', {
-            duration: 3000,
-          });
-          window.location.reload();
-        }
-      })
+    if(this.data){
+      
+      // for updating form
+      if(this.data){
+        this.recrutoryBlog.patchBlogs(this.data.id,this.data).subscribe({
+          next: (val: any) => {
+            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          },
+          error: (err: any) => {
+            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          }
+        })
+      }
+
     }else{
-      this._snackBar.open('Please fill the form', 'Close', {
-        duration: 3000,
-      });
+      // for adding new data
+      if(this.blogForm.value.content){
+        this.recrutoryBlog.postBlogs(this.blogForm.value).subscribe({
+          next: (val: any) => {
+            this._snackBar.open('Form Submitted Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          },
+          error: (err: any) => {
+            this._snackBar.open('Form Submitted Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          }
+        })
+      }else{
+        this._snackBar.open('Please fill the form', 'Close', {
+          duration: 3000,
+        });
+      }
+
+      // this.recrutoryBlog.postBlogs(this.blogForm.value).subscribe({
+      //   next: (val: any) => {
+      //     this._snackBar.open('Form Submitted Successfully', 'Close', {
+      //       duration: 3000,
+      //     });
+      //     window.location.reload();
+      //   },
+      //   error: (err: any) => {
+      //     this._snackBar.open('Error submitting form', 'Close', {
+      //       duration: 3000,
+      //     });
+      //     console.error(err);
+      //   }
+      // });
+
+
     }
   }
 

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BlogsService } from '../../services/blogs.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CuriotoryBlogService } from '../../services/curiotory-blog.service';
 
 @Component({
   selector: 'app-curiotory-blog-form',
@@ -13,9 +14,7 @@ export class CuriotoryBlogFormComponent implements OnInit{
 
   blogForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder,private blog:BlogsService,private _snackBar: MatSnackBar){}
-
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder,private curiotoryBlog:CuriotoryBlogService,private _snackBar: MatSnackBar,private _fb: FormBuilder, private _dialogRef: MatDialogRef<CuriotoryBlogFormComponent>, @Inject(MAT_DIALOG_DATA) public data: any){
     this.blogForm = this._formBuilder.group({
       title: [''],
       content: [''],
@@ -25,26 +24,54 @@ export class CuriotoryBlogFormComponent implements OnInit{
     });
   }
 
+  ngOnInit(): void {
+    this.blogForm.patchValue(this.data);
+  }
+
   submitBlogs(){
-    if(this.blogForm.value.content){
-      this.blog.postBlogs(this.blogForm.value).subscribe({
-        next: (val: any) => {
-          this._snackBar.open('Form Submitted Successfully', 'Close', {
-            duration: 3000,
-          });
-          window.location.reload();
-        },
-        error: (err: any) => {
-          this._snackBar.open('Form Submitted Successfully', 'Close', {
-            duration: 3000,
-          });
-          window.location.reload();
-        }
-      })
+    if(this.blogForm.valid){
+      
+      // for updating form
+      if(this.data){
+        this.curiotoryBlog.patchCuriotoryBlog(this.data.id,this.data).subscribe({
+          next: (val: any) => {
+            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          },
+          error: (err: any) => {
+            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          }
+        })
+      }
+
     }else{
-      this._snackBar.open('Please fill the form', 'Close', {
-        duration: 3000,
-      });
+      // for adding new data
+
+      if(this.blogForm.value.content){
+        this.curiotoryBlog.postCuriotoryBlog(this.blogForm.value).subscribe({
+          next: (val: any) => {
+            this._snackBar.open('Form Submitted Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          },
+          error: (err: any) => {
+            this._snackBar.open('Form Submitted Successfully', 'Close', {
+              duration: 3000,
+            });
+            window.location.reload();
+          }
+        })
+      }else{
+        this._snackBar.open('Please fill the form', 'Close', {
+          duration: 3000,
+        });
+      }
     }
   }
 
@@ -61,17 +88,6 @@ export class CuriotoryBlogFormComponent implements OnInit{
 
 // ----------------------------- github code: ----------------------------------
 
-// import { Component, Inject, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup } from '@angular/forms';
-// import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-// import { CoreService } from '../core/core.service';
-// import { EmployeeService } from '../services/employee.service';
-
-// @Component({
-//   selector: 'app-emp-add-edit',
-//   templateUrl: './emp-add-edit.component.html',
-//   styleUrls: ['./emp-add-edit.component.scss'],
-// })
 // export class EmpAddEditComponent implements OnInit {
 //   empForm: FormGroup;
 

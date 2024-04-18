@@ -1,3 +1,6 @@
+.dialog-box{
+  text-align: center;
+}
 .container-box {
     padding-top: 3rem;
   }
@@ -9,7 +12,7 @@
     font-weight: bold;
   }
   
-  .card {
+  .card{
     z-index: 2;
     border: 1px solid black;
     /* width: 80%; */
@@ -42,5 +45,10 @@
   .submitbtn:hover{
     background-color: rgb(28, 103, 150);
     
+  }
+  .action{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
   

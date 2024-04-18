@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogFormComponent } from './components/blog-form/blog-form.component';
 import { LoginComponent } from './components/login/login.component';
 import { authguardGuard } from './auth/authguard.guard';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CuriotoryDashboardComponent } from './components/curiotory-dashboard/curiotory-dashboard.component';
+import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/recrutory-dashboard.component';
 
 const routes: Routes = [
   {
@@ -11,13 +11,13 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'blog',
+    path: 'curiotory',
     canActivate: [authguardGuard],
-    component: BlogFormComponent
+    component: CuriotoryDashboardComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'recrutory',
+    component: RecrutoryDashboardComponent
   }
 ];
 

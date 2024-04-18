@@ -17,6 +17,13 @@ import { RecrutoryBlogFormComponent } from './components/recrutory-blog-form/rec
 import { CuriotoryDashboardComponent } from './components/curiotory-dashboard/curiotory-dashboard.component';
 import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/recrutory-dashboard.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +44,12 @@ import { RecrutoryDashboardComponent } from './components/recrutory-dashboard/re
     ReactiveFormsModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration(),
