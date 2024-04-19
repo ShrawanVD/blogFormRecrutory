@@ -64,7 +64,6 @@ export class CandidateComponent {
   getCustomerDetails(){
     this.candidateService.getAllCandidateDetails().subscribe({
       next: (res:any) => {
-        console.log(res.value);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

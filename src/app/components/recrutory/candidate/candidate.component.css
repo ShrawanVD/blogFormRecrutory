@@ -6,9 +6,9 @@
 
   /* used to provide the horizontal scroller functionality */
   .table-container{
-      overflow: auto;
-      height: 30rem;
+      min-width: 10rem;
       height: 34.5rem;
+      overflow: auto;
   }
 
   td{
