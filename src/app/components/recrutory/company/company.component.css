@@ -29,6 +29,7 @@
 
   td{
     min-width:300px;
+    text-align: justify;
   }
 
   th, td{

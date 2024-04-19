@@ -26,10 +26,12 @@ th{
   position: sticky;
   top: 0px;
   color: white;
+  text-align: center;
 }
 
 td{
   min-width:400px;
+  text-align: justify;
 }
 
 th, td{
