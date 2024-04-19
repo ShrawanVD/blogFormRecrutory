@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CuriotoryService } from '../../../services/curiotory/curiotory.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-teacher',
@@ -11,7 +12,7 @@ import { CuriotoryService } from '../../../services/curiotory/curiotory.service'
   styleUrl: './teacher.component.css'
 })
 export class TeacherComponent {
-   
+   teacherId :any;
   displayedColumns: string[] = [
     'srno',
     'date',
@@ -34,14 +35,21 @@ export class TeacherComponent {
     'additionalInformation',
     'uploadPhoto',
     'uploadCV',
+    'action'
   ];
   dataSource!: MatTableDataSource<any>;
+  remarkForm!: FormGroup;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild('callAPIDialog') callAPIDialog!: TemplateRef<any>;
   pageSize =10
 
-  constructor(private _dialog: MatDialog, private curiotory: CuriotoryService) { }
+  constructor(private _dialog: MatDialog, private curiotory: CuriotoryService,private _formBuilder: FormBuilder) {
+    this.remarkForm = this._formBuilder.group({
+      remarks: [''],
+    });
+   }
 
 
   ngOnInit(): void {
@@ -51,7 +59,6 @@ export class TeacherComponent {
   getTeacher() {
     this.curiotory.getAllTeacher().subscribe({
       next: (res:any) => {
-        console.log(res.value);
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -70,4 +77,29 @@ export class TeacherComponent {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  openEditRemarks(id: any){
+    this.teacherId = id;
+    console.log(this.teacherId);
+    const dialogRef = this._dialog.open(this.callAPIDialog);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getTeacher();
+        }
+      },
+    });
+  }
+
+  submitRemark(){
+    this.curiotory.patchBlogs(this.teacherId,this.remarkForm.value).subscribe({
+      next: (val: any) => {
+        window.location.reload();
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    })
+  }
+
 }

@@ -13,6 +13,6 @@ export class CuriotoryService {
   }
 
   patchBlogs(id:any,data:any){
-    return this.http.patch('',data);
+    return this.http.patch(`https://backendapi-ay7s.onrender.com/api/teachers/${id}`,data);
   }
 }
