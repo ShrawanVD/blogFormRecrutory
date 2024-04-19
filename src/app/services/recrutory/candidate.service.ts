@@ -13,7 +13,7 @@ export class CandidateService {
   }
 
   patchRemarkCandidate(id:any,data:any){
-    return this.http.patch(`${id}`,data);
+    return this.http.patch(`https://backendrecrutory.onrender.com/api/candidate/remarks/${id}`,data);
   }
 
 }

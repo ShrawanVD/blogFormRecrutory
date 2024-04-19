@@ -74,3 +74,24 @@
     .mat-paginator{
       min-width: auto;
     }
+
+    
+.cell-head {
+  text-align: center;
+}
+
+.cell-width {
+  min-width: 100px;
+  text-align: center;
+}
+.content-dialog{
+  padding: 1rem 0rem; 
+}
+.content-dialog form{
+  padding: 1rem;
+  width: 80%
+}
+
+.remark-dialog{
+  padding: 2rem;
+}
