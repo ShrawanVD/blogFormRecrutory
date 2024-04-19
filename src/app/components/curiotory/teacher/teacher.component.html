@@ -20,118 +20,118 @@
             <table mat-table [dataSource]="dataSource" matSort>
 
                 <ng-container matColumnDef="srno">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> SrNo </th>
-                    <td mat-cell *matCellDef="let row; let i = index" style="min-width: 50px;"> {{i + 1}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 50px; background-color: rgb(50, 89, 152)"> SrNo </th>
+                    <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="date">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Date </th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.date}}</td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="firstName">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> First Name </th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.firstName}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="lastName">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Last Name </th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.lastName}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="gender">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Gender</th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.gender}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Email </th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.email}}</td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="phoneNumber">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Phone Number </th>
                     <td mat-cell *matCellDef="let row" class="cell-width"> {{row.phoneNumber}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="currentLocation">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Location </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 200px; text-align: center;">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 200px; text-align: center; background-color: rgb(50, 89, 152)"> Current Location </th>
+                    <td mat-cell *matCellDef="let row" >
                         {{row.currentLocation}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="languages">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Languages </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Languages I want to teach</th>
                     <td mat-cell *matCellDef="let row"> {{row.languages}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="qualification">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Qualification </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Qualification </th>
                     <td mat-cell *matCellDef="let row"> {{row.qualification}}</td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="certifyingInstitution">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Certifying Institution </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 200px;"> {{row.certifyingInstitution}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 200px; background-color: rgb(50, 89, 152)"> Certifying Institution </th>
+                    <td mat-cell *matCellDef="let row"> {{row.certifyingInstitution}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="student_group">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Student Group </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Student Group </th>
                     <td mat-cell *matCellDef="let row"> {{row.student_group}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="english_proficiency">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> English Proficiency </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 200px;"> {{row.english_proficiency}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 200px; background-color: rgb(50, 89, 152)"> English Proficiency </th>
+                    <td mat-cell *matCellDef="let row"> {{row.english_proficiency}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="experience">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Experience </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Experience </th>
                     <td mat-cell *matCellDef="let row"> {{row.experience}}</td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="certificates">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Certificates </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Certificates </th>
                     <td mat-cell *matCellDef="let row"> {{row.certificates}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="expTranslation">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Exp Translation </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 500px;"> {{row.expTranslation}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 500px; background-color: rgb(50, 89, 152)"> Experience In Translation and Interpretation</th>
+                    <td mat-cell *matCellDef="let row" > {{row.expTranslation}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="ratePerHour">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate Per Hour </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 200px;"> {{row.ratePerHour}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 200px; background-color: rgb(50, 89, 152)"> Rate Per Hour </th>
+                    <td mat-cell *matCellDef="let row" > {{row.ratePerHour}}</td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="ratePerMonth">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate Per Month </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 200px;"> {{row.ratePerMonth}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 200px; background-color: rgb(50, 89, 152)"> Rate Per Month </th>
+                    <td mat-cell *matCellDef="let row" > {{row.ratePerMonth}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="additionalInformation">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Additional Information </th>
-                    <td mat-cell *matCellDef="let row" style="min-width: 500px;"> {{row.additionalInformation}}</td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 500px; background-color: rgb(50, 89, 152)"> Additional Information </th>
+                    <td mat-cell *matCellDef="let row" > {{row.additionalInformation}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="uploadPhoto">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload Photo </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Upload Photo </th>
                     <td mat-cell *matCellDef="let row"> {{row.uploadPhoto}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="uploadCV">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Upload CV </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Upload CV </th>
                     <td mat-cell *matCellDef="let row"> {{row.uploadCV}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Action </th>
                     <td mat-cell *matCellDef="let row">
                         <button mat-icon-button color="primary" (click)="openEditRemarks(row._id)">
                             <mat-icon>edit</mat-icon>

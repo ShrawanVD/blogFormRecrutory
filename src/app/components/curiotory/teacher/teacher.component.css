@@ -4,6 +4,39 @@
   align-items: center;
 }
 
+
+/* used to provide the horizontal scroller functionality */
+.table-container{
+  min-width: 10rem;
+  height: 34.5rem;
+  overflow: auto;
+}
+
+/* for giving borders */
+
+table{
+border: 1px solid black;
+
+border-collapse: separate;
+border-spacing: 0px;
+}
+
+th{
+position: sticky;
+top: 0px;
+color: white;
+}
+
+td{
+min-width:300px;
+}
+
+th, td{
+border: 1px solid black;
+}
+
+/* --------------- */
+
 .example-spacer {
   flex: 1 1 auto;
 }
