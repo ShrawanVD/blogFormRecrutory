@@ -11,10 +11,31 @@
       overflow: auto;
   }
 
-  td{
-    min-width: 200px;
+
+   /* for giving borders */
+
+  table{
+    border: 1px solid black;
+
+    border-collapse: separate;
+    border-spacing: 0px;
+  }
+  
+  th{
+    position: sticky;
+    top: 0px;
+    color: white;
   }
 
+  td{
+    min-width:300px;
+  }
+
+  th, td{
+    border: 1px solid black;
+  }
+
+/* --------------- */
   
   
   .example-spacer {
