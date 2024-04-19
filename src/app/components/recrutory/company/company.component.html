@@ -24,33 +24,33 @@
           <table mat-table [dataSource]="dataSource" matSort>
     
             <ng-container matColumnDef="srno">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> SrNo </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> SrNo </th>
               <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </td>
             </ng-container>
 
             <ng-container matColumnDef="timestamp">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Date </th>
                 <td mat-cell *matCellDef="let row" > {{row.timestamp}}</td>
             </ng-container>
       
             <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Name </th>
               <td mat-cell *matCellDef="let row"> {{row.name}}</td>
           </ng-container>
       
             <!-- Progress Column -->
             <ng-container matColumnDef="contactno">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Number </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Number </th>
               <td mat-cell *matCellDef="let row"> {{row.contactno}}</td>
             </ng-container>
       
             <ng-container matColumnDef="companyName">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Company Name </th>
               <td mat-cell *matCellDef="let row" > {{row.companyName}}</td>
             </ng-container>
 
             <ng-container matColumnDef="email">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Email </th>
               <td mat-cell *matCellDef="let row" > {{row.email}}</td>
             </ng-container>
       
@@ -60,48 +60,48 @@
             </ng-container> -->
       
             <ng-container matColumnDef="language">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Languages </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Languages </th>
                 <td mat-cell *matCellDef="let row" > {{row.language}}</td>
             </ng-container>
 
             
             <ng-container matColumnDef="additionalLanguage">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Additional Lang. </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Additional Lang. </th>
                 <td mat-cell *matCellDef="let row" > {{row.additionalLanguage}}</td>
             </ng-container>
 
             <ng-container matColumnDef="location">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Location </th>
                 <td mat-cell *matCellDef="let row" > {{row.location}}</td>
             </ng-container>
 
             <ng-container matColumnDef="compensationBand">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Compensation Band </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Compensation Band </th>
                 <td mat-cell *matCellDef="let row" > {{row.compensationBand}}</td>
             </ng-container>
 
             <ng-container matColumnDef="workingMode">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Working Mode </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Working Mode </th>
                 <td mat-cell *matCellDef="let row" > {{row.workingMode}}</td>
             </ng-container>
 
             <ng-container matColumnDef="roleType">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Role </th>
                 <td mat-cell *matCellDef="let row" > {{row.roleType}}</td>
             </ng-container>
 
             <ng-container matColumnDef="hiringTimeline">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Hiring Timeline </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Hiring Timeline </th>
                 <td mat-cell *matCellDef="let row" > {{row.hiringTimeline}}</td>
             </ng-container>
 
             <ng-container matColumnDef="communicationChannel">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Communication Channel </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Communication Channel </th>
                 <td mat-cell *matCellDef="let row" > {{row.communicationChannel}}</td>
             </ng-container>
 
             <ng-container matColumnDef="employementType">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employement Type </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Employement Type </th>
                 <td mat-cell *matCellDef="let row" > {{row.employementType}}</td>
             </ng-container>
 
