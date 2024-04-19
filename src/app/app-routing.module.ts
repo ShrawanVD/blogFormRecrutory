@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { authguardGuard } from './auth/authguard.guard';
 import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
 import { CompanyComponent } from './components/recrutory/company/company.component';
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
@@ -9,6 +8,7 @@ import { TeacherComponent } from './components/curiotory/teacher/teacher.compone
 import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
 import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
 import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
+import { authGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -17,7 +17,6 @@ const routes: Routes = [
   },
   {
     path: 'curiotory/blogs',
-    canActivate: [authguardGuard],
     component: CuriotoryDashboardComponent
   },
   {
@@ -30,7 +29,12 @@ const routes: Routes = [
   },
   {
     path: 'curiotory',
-    component: CuriotoryNewDashboardComponent
+    canActivate: [authGuard],
+    component: CuriotoryNewDashboardComponent,
+    
+    // path: 'curiotory',
+    // canActivate:[authGuard],
+    // component: CuriotoryNewDashboardComponent
   },
   {
     path: 'curiotory/teacher',
@@ -50,4 +54,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }

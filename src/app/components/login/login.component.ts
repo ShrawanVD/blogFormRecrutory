@@ -16,11 +16,30 @@ export class LoginComponent {
   constructor(private router: Router,private blog:BlogsService){}
 
   onLogin(){
-    if((this.loginObj.userName=='vaibhav' && this.loginObj.passWord=='v@123') || this.loginObj.userName=='varun' && this.loginObj.passWord=='Varun@123'){
+    if((this.loginObj.userName=='curiotory' && this.loginObj.passWord=='c@123')){
       this.router.navigateByUrl('curiotory');
-    }else if((this.loginObj.userName=='ram' && this.loginObj.passWord=='r@123') || this.loginObj.userName=='varun' && this.loginObj.passWord=='Varun@123'){
+    }else if((this.loginObj.userName=='recrutory' && this.loginObj.passWord=='r@123')){
       this.router.navigateByUrl('recrutory');
     }
   }
+
+  // onLogin(module: string, username: string, password: string): void {
+  //   // Perform authentication for the specified module
+  //   const isAuthenticated = this.authService.isAuthenticated(module, username, password);
+
+  //   if (isAuthenticated) {
+  //     // Authentication successful, navigate to the appropriate module
+  //     if (module === 'curiotory') {
+  //       // Navigate to curiotory module
+  //       this.router.navigateByUrl('/curiotory');
+  //     } else if (module === 'recrutory') {
+  //       // Navigate to recrutory module
+  //       this.router.navigateByUrl('/recrutory');
+  //     }
+  //   } else {
+  //     // Authentication failed, display error message
+  //     console.log('Authentication failed. Invalid username or password.');
+  //   }
+  // }
 
 }
