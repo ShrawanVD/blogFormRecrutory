@@ -1,4 +1,4 @@
-<div style="background-color: rgb(229, 229, 229); height: 95.5%; width: auto; padding-bottom: 2rem;">
+<div style="background-color: rgb(229, 229, 229); height: 97%; width: auto;">
     <mat-toolbar class="navbar" color="primary" style="background-color: rgb(50, 89, 152); padding: 1.5rem 6rem;">
         <img src="../../../assets/curiotory.png" alt="CURIOTORY" class="logo">
 
@@ -20,7 +20,7 @@
             <table mat-table [dataSource]="dataSource" matSort>
 
                 <ng-container matColumnDef="srno">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 50px; background-color: rgb(50, 89, 152)"> SrNo </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> SrNo </th>
                     <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </td>
                 </ng-container>
 
@@ -128,6 +128,11 @@
                 <ng-container matColumnDef="uploadCV">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Upload CV </th>
                     <td mat-cell *matCellDef="let row"> {{row.uploadCV}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="remarks">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="background-color: rgb(50, 89, 152)"> Remarks </th>
+                    <td mat-cell *matCellDef="let row"> {{row.remarks}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="action">

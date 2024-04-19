@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './teacher.component.css'
 })
 export class TeacherComponent {
-   teacherId :any;
+  teacherId :any;
   displayedColumns: string[] = [
     'srno',
     'date',
@@ -35,6 +35,7 @@ export class TeacherComponent {
     'additionalInformation',
     'uploadPhoto',
     'uploadCV',
+    'remarks',
     'action'
   ];
   dataSource!: MatTableDataSource<any>;

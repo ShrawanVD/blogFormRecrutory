@@ -13,4 +13,8 @@ export class CompanyService {
     return this.http.get("https://backendrecrutory.onrender.com/api/company");
   }
 
+  patchRemarkCompany(id:any,data:any){
+    return this.http.patch(`${id}`,data);
+  }
+
 }

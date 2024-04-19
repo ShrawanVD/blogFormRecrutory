@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CandidateService } from '../../../services/recrutory/candidate.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-candidate',
@@ -11,12 +12,19 @@ import { CandidateService } from '../../../services/recrutory/candidate.service'
   styleUrl: './candidate.component.css'
 })
 export class CandidateComponent {
+  candidateId :any;
+  remarkForm!: FormGroup;
 
-  constructor(private _dialog: MatDialog, private candidateService: CandidateService) { }
+  constructor(private _dialog: MatDialog, private candidateService: CandidateService,private _formBuilder: FormBuilder) {
+    this.remarkForm = this._formBuilder.group({
+      remarks: [''],
+    });
+   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild('callAPIDialog') callAPIDialog!: TemplateRef<any>;
+  
   displayedColumns: string[] = [
     'srno',
     'timestamp',
@@ -52,11 +60,13 @@ export class CandidateComponent {
     'fworkExample',
     'fiInterpretation',
     'fichallenges',
-    'fiLanguageSkills'
+    'fiLanguageSkills',
+    'remarks',
+    'action'
   ];
 
   dataSource!: MatTableDataSource<any>;
-
+  
   ngOnInit(): void{
     this.getCustomerDetails();
   }
@@ -84,31 +94,28 @@ export class CandidateComponent {
     }
   }
 
-  // openEditForm(data: any) {
-  //       const dialogRef = this._dialog.open(RecrutoryBlogFormComponent, {
-  //         data,
-  //       });
-    
-  //       dialogRef.afterClosed().subscribe({
-  //         next: (val) => {
-  //           if (val) {
-  //             this.getRecrutoryBlog();
-  //           }
-  //         },
-  //       });
-  //     }
+  openEditRemarks(id: any){
+    this.candidateId = id;
+    console.log(this.candidateId);
+    const dialogRef = this._dialog.open(this.callAPIDialog);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getCustomerDetails();
+        }
+      },
+    });
+  }
 
-  
-
-  // openAddEditEmpForm() {
-  //   const dialogRef = this._dialog.open(RecrutoryBlogFormComponent);
-  //   dialogRef.afterClosed().subscribe({
-  //     next: (val) => {
-  //       if (val) {
-  //         this.getRecrutoryBlog();
-  //       }
-  //     },
-  //   });
-  // }
+  submitRemark(){
+    this.candidateService.patchRemarkCandidate(this.candidateId,this.remarkForm.value).subscribe({
+      next: (val: any) => {
+        window.location.reload();
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    })
+  }
 
 }

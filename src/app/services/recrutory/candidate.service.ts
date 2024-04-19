@@ -12,4 +12,8 @@ export class CandidateService {
     return this.http.get("https://backendrecrutory.onrender.com/api/candidate");
   }
 
+  patchRemarkCandidate(id:any,data:any){
+    return this.http.patch(`${id}`,data);
+  }
+
 }

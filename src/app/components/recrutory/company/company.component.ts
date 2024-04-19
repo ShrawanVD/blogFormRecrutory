@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { CompanyService } from '../../../services/recrutory/company.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-company',
@@ -12,10 +13,17 @@ import { MatSort } from '@angular/material/sort';
 })
 export class CompanyComponent {
 
-  constructor(private _dialog: MatDialog, private companyService: CompanyService) { }
+  customerId: any;
+  remarkForm!: FormGroup;
+  constructor(private _dialog: MatDialog, private companyService: CompanyService,private _formBuilder: FormBuilder) {
+    this.remarkForm = this._formBuilder.group({
+      remarks: [''],
+    });
+   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild('callAPIDialog') callAPIDialog!: TemplateRef<any>;
 
   displayedColumns: string[] = [
     'srno',
@@ -32,7 +40,9 @@ export class CompanyComponent {
     'roleType',
     'hiringTimeline',
     'communicationChannel',
-    'employementType'
+    'employementType',
+    'remarks',
+    'action'
   ];
 
   dataSource!: MatTableDataSource<any>;
@@ -63,32 +73,29 @@ export class CompanyComponent {
       this.dataSource.paginator.firstPage();
     }
   }
+  openEditRemarks(id: any){
+    this.customerId = id;
+    console.log(this.customerId);
+    const dialogRef = this._dialog.open(this.callAPIDialog);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+          this.getCustomerDetails();
+        }
+      },
+    });
+  }
 
-  // openEditForm(data: any) {
-  //       const dialogRef = this._dialog.open(RecrutoryBlogFormComponent, {
-  //         data,
-  //       });
-    
-  //       dialogRef.afterClosed().subscribe({
-  //         next: (val) => {
-  //           if (val) {
-  //             this.getRecrutoryBlog();
-  //           }
-  //         },
-  //       });
-  //     }
+  submitRemark(){
+    this.companyService.patchRemarkCompany(this.customerId,this.remarkForm.value).subscribe({
+      next: (val: any) => {
+        window.location.reload();
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    })
+  }
 
-  
-
-  // openAddEditEmpForm() {
-  //   const dialogRef = this._dialog.open(RecrutoryBlogFormComponent);
-  //   dialogRef.afterClosed().subscribe({
-  //     next: (val) => {
-  //       if (val) {
-  //         this.getRecrutoryBlog();
-  //       }
-  //     },
-  //   });
-  // }
 
 }
