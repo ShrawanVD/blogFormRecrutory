@@ -18,7 +18,7 @@ export class RecrutoryBlogFormComponent implements OnInit{
     this.blogForm = this._formBuilder.group({
       title: [''],
       content: [''],
-      content2: [''],
+      intro: [''],
       imageUrl: [''],
       imageUrl2: ['']
     });

@@ -12,9 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
-import { CuriotoryBlogFormComponent } from './components/curiotory/curiotory-blog-form/curiotory-blog-form.component';
 import { RecrutoryBlogFormComponent } from './components/recrutory/recrutory-blog-form/recrutory-blog-form.component';
-import { CuriotoryDashboardComponent } from './components/curiotory/curiotory-dashboard/curiotory-dashboard.component';
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,22 +23,20 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CompanyComponent } from './components/recrutory/company/company.component';
 import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
-import { TeacherComponent } from './components/curiotory/teacher/teacher.component';
-import { CuriotoryNewDashboardComponent } from './components/curiotory/curiotory-new-dashboard/curiotory-new-dashboard.component';
 import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
+
+import { AngularEditorModule } from
+'@kolkov/angular-editor'
+;
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CuriotoryBlogFormComponent,
     RecrutoryBlogFormComponent,
-    CuriotoryDashboardComponent,
     RecrutoryDashboardComponent,
     CompanyComponent,
     CandidateComponent,
-    TeacherComponent,
-    CuriotoryNewDashboardComponent,
     RecrutoryNewDashboardComponent,
   ],
   imports: [
@@ -60,6 +56,7 @@ import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+    AngularEditorModule
   ],
   providers: [
     provideClientHydration(),

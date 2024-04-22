@@ -51,4 +51,8 @@
     text-align: center;
     justify-content: center;
   }
+  .editor{
+    margin-top: 2rem;
+    min-width: 90%;
+  }
   

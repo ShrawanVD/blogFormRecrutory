@@ -16,9 +16,7 @@ export class LoginComponent {
   constructor(private router: Router,private blog:BlogsService){}
 
   onLogin(){
-    if((this.loginObj.userName=='curiotory' && this.loginObj.passWord=='c@123')){
-      this.router.navigateByUrl('curiotory');
-    }else if((this.loginObj.userName=='recrutory' && this.loginObj.passWord=='r@123')){
+    if((this.loginObj.userName=='recrutory' && this.loginObj.passWord=='r@123')){
       this.router.navigateByUrl('recrutory');
     }
   }
