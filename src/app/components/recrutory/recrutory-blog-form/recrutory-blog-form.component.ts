@@ -29,25 +29,22 @@ export class RecrutoryBlogFormComponent implements OnInit{
   }
 
   submitBlogs(){
-    if(this.data){
-      
+    if(this.data._id){
       // for updating form
-      if(this.data){
-        this.recrutoryBlog.patchBlogs(this.data.id,this.data).subscribe({
+        this.recrutoryBlog.patchBlogs(this.data._id,this.blogForm.value).subscribe({
           next: (val: any) => {
-            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+            this._snackBar.open('Recrutory Blog Updated Successfully', 'Close', {
               duration: 3000,
             });
             window.location.reload();
           },
           error: (err: any) => {
-            this._snackBar.open('Curiotory Blog Updated Successfully', 'Close', {
+            this._snackBar.open('Recrutory Blog Not Updated', 'Close', {
               duration: 3000,
             });
             window.location.reload();
           }
         })
-      }
 
     }else{
       // for adding new data
@@ -90,6 +87,8 @@ export class RecrutoryBlogFormComponent implements OnInit{
 
     }
   }
+
+  
 
 }
 

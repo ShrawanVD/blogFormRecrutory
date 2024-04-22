@@ -17,7 +17,7 @@ export class BlogsService {
   }
 
   patchBlogs(id:any,data:any){
-    return this.http.patch('',data);
+    return this.http.patch(`https://blogsbackend-l09l.onrender.com/api/blogs/${id}`,data);
   }
 
 }
