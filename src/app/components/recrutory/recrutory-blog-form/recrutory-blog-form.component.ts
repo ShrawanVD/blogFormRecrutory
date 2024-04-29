@@ -29,24 +29,25 @@ export class RecrutoryBlogFormComponent implements OnInit{
   }
 
   submitBlogs(){
-    if(this.data._id){
-      // for updating form
-        this.recrutoryBlog.patchBlogs(this.data._id,this.blogForm.value).subscribe({
-          next: (val: any) => {
-            this._snackBar.open('Recrutory Blog Updated Successfully', 'Close', {
-              duration: 3000,
-            });
-            window.location.reload();
-          },
-          error: (err: any) => {
-            this._snackBar.open('Recrutory Blog Not Updated', 'Close', {
-              duration: 3000,
-            });
-            window.location.reload();
-          }
-        })
+    // if(this.data._id){
+    //   // for updating form
+    //     this.recrutoryBlog.patchBlogs(this.data._id,this.blogForm.value).subscribe({
+    //       next: (val: any) => {
+    //         this._snackBar.open('Recrutory Blog Updated Successfully', 'Close', {
+    //           duration: 3000,
+    //         });
+    //         window.location.reload();
+    //       },
+    //       error: (err: any) => {
+    //         this._snackBar.open('Recrutory Blog Not Updated', 'Close', {
+    //           duration: 3000,
+    //         });
+    //         window.location.reload();
+    //       }
+    //     })
 
-    }else{
+    // }else{
+
       // for adding new data
       if(this.blogForm.value.content){
         this.recrutoryBlog.postBlogs(this.blogForm.value).subscribe({
@@ -85,7 +86,7 @@ export class RecrutoryBlogFormComponent implements OnInit{
       // });
 
 
-    }
+    // }
   }
 
   

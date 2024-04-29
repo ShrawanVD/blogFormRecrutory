@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogsService } from '../../services/blogs.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +13,35 @@ export class LoginComponent {
     passWord: ''
   };
 
-  constructor(private router: Router,private blog:BlogsService){}
+  constructor( private loginService: LoginService){}
 
-  onLogin(){
-    if((this.loginObj.userName=='recrutory' && this.loginObj.passWord=='r@123')){
-      this.router.navigateByUrl('recrutory');
-    }
-  }
+  // onLogin(data:any){
+  //   console.log(data);
+  //   this.loginService.login(data);
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // onLogin(){
+  //   if((this.loginObj.userName=='recrutory' && this.loginObj.passWord=='r@123')){
+  //     this.router.navigateByUrl('recrutory');
+  //   }
+  // }
+
+
+
 
   // onLogin(module: string, username: string, password: string): void {
   //   // Perform authentication for the specified module
@@ -39,5 +61,14 @@ export class LoginComponent {
   //     console.log('Authentication failed. Invalid username or password.');
   //   }
   // }
+
+
+
+
+
+
+
+
+
 
 }

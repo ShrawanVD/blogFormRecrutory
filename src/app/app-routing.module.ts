@@ -5,7 +5,6 @@ import { CompanyComponent } from './components/recrutory/company/company.compone
 import { RecrutoryDashboardComponent } from './components/recrutory/recrutory-blog/recrutory-dashboard.component';
 import { CandidateComponent } from './components/recrutory/candidate/candidate.component';
 import { RecrutoryNewDashboardComponent } from './components/recrutory/recrutory-new-dashboard/recrutory-new-dashboard.component';
-import { authGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   {
