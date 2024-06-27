@@ -30,7 +30,7 @@ export class RecrutoryDashboardComponent {
   constructor(private _dialog: MatDialog, private recrutoryBlog: BlogsService) { }
 
   openAddEditEmpForm() {
-    const dialogRef = this._dialog.open(RecrutoryBlogFormComponent);
+    const dialogRef = this._dialog.open(RecrutoryBlogFormComponent, {disableClose: true});
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
@@ -69,6 +69,7 @@ export class RecrutoryDashboardComponent {
   openEditForm(data: any) {
         const dialogRef = this._dialog.open(RecrutoryBlogFormComponent, {
           data,
+          disableClose: true
         });
     
         dialogRef.afterClosed().subscribe({
