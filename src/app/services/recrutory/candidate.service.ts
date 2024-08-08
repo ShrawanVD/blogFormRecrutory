@@ -9,11 +9,11 @@ export class CandidateService {
   constructor(private http: HttpClient) {}
 
   getAllCandidateDetails(){
-    return this.http.get("https://backendrecrutory.onrender.com/api/candidate");
+    return this.http.get("https://recrutory-form-backend.onrender.com/api/candidate");
   }
 
   patchRemarkCandidate(id:any,data:any){
-    return this.http.patch(`https://backendrecrutory.onrender.com/api/candidate/remarks/${id}`,data);
+    return this.http.patch(`https://recrutory-form-backend.onrender.com/api/candidate/remarks/${id}`,data);
   }
 
 }

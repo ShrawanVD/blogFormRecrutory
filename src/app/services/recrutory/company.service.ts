@@ -10,11 +10,11 @@ export class CompanyService {
 
 
   getAllCustomerDetails(){
-    return this.http.get("https://backendrecrutory.onrender.com/api/company");
+    return this.http.get("https://recrutory-form-backend.onrender.com/api/company");
   }
 
   patchRemarkCompany(id:any,data:any){
-    return this.http.patch(`https://backendrecrutory.onrender.com/api/company/remarks/${id}`,data);
+    return this.http.patch(`https://recrutory-form-backend.onrender.com/api/company/remarks/${id}`,data);
   }
 
 }

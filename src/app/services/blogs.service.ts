@@ -9,15 +9,15 @@ export class BlogsService {
   constructor(public http:HttpClient) { }
 
   getAllRecrutoryBlog(){
-    return this.http.get('https://blogsbackend-l09l.onrender.com/api/blogs');
+    return this.http.get('https://recrutory-blogs-backend.onrender.com/api/blogs');
   }
 
   postBlogs(data:any){
-    return this.http.post('https://blogsbackend-l09l.onrender.com/sendBlogs',data);
+    return this.http.post('https://recrutory-blogs-backend.onrender.com/sendBlogs',data);
   }
 
   patchBlogs(id:any,data:any){
-    return this.http.patch(`https://blogsbackend-l09l.onrender.com/api/blogs/${id}`,data);
+    return this.http.patch(`https://recrutory-blogs-backend.onrender.com/api/blogs/${id}`,data);
   }
 
 }
